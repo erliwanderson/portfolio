@@ -1,7 +1,9 @@
+import Header from "./header/Header";
+
 export default function App() {
   return (
     <>
-      <h1>Portfolio</h1>
+      <Header />
     </>
   );
 }
