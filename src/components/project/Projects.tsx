@@ -1,75 +1,105 @@
+import {
+  useGitHubAutomatedRepos,
+  ProjectIcons,
+  StackIcons,
+} from "github-automated-repos";
+
+import { Carrosel } from "../carrosel/Carrosel";
+
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+
 function Projects() {
-  const projects = [
-    {
-      title: "projeto 1",
-      description: "Descrição do projeto 1",
-      image: "",
-      link: "#",
-      colSpan: "col-span-1",
-    },
-    {
-      title: "projeto 2",
-      description: "Descrição do projeto 2",
-      image: "",
-      link: "#",
-      colSpan: "col-span-1 md:col-span-2",
-    },
+  const settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 10000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
-    {
-      title: "projeto 3",
-      description: "Descrição do projeto 3",
-      image: "",
-      link: "#",
-      colSpan: "col-span-1",
-    },
+  const data = useGitHubAutomatedRepos("erliwanderson", "deploy");
 
-    {
-      title: "projeto 4",
-      description: "Descrição do projeto 4",
-      image: "",
-      link: "#",
-      colSpan: "col-span-1",
-    },
-  ];
   return (
-    <section className=" bg-gradient-to-tr from-black to-gray-900 text-white ">
-      <div className="container mx-auto max-w-4xl p-4 py-12">
+    <section className="pb-8">
+      <div className="container max-w-7xl mx-auto p-4">
         <div className="relative p-4 text-center">
-          <h2 className="relative z-50 mb-2 text-white">
-            <span className="mr-2 font-headline text-3xl font-semibold">
-              Projetos
-            </span>
+          <h2 className="relative font-headline  z-50 pb-8 font-bold text-4xl">
+            Meus{" "}
+            <span className="font-handwriting  text-[#bbed2f]">Projetos</span>
           </h2>
-          <p className="relative text-sm text-gray-400">
-            Alguns dos projetos pessoais e que já realizei ao longo da minha
-            trajetória como programador front-end.
-          </p>
-          {/* <div className="absolute left-1/2 top-3 z-0 h-10 w-10 rounded-tl bg-blue-400/10"></div> */}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 ">
-        {projects.map((project, index) => (
-          <div
-            className={`group relative h-52 cursor-default rounded-lg ${project.colSpan} bg-cover bg-center`}
-            key={`project-${index}`}
-            style={{ backgroundImage: `url(${project.image})` }}>
-            <div className="absolute left-1/2 top-3 z-0 h-10 w-10 rounded-tl bg-blue-400/10">
-              <div className="absolute inset-0 flex h-full w-full flex-col items-center justify-center rounded-lg bg-blue-600 text-white opacity-0 transition-opacity group-hover:opacity-100">
-                <h4 className="font-headline text-lg font-semibold">
-                  {project.title}
-                </h4>
-                <p className="mb-4 text-sm">{project.description}</p>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  {/*  */}
-                </a>
+      <div className="max-w-7xl mx-auto slider-container px-10 pt-3 ">
+        <Carrosel {...settings}>
+          {data.map((item) => {
+            return (
+              <div className="p-4 sm:w-80 md:w-96 lg:w-80 xl:w-96   shadow-lg shadow-[#bbed2f]  transition duration-300 ease-in-out hover:-translate-y-1">
+                <div key={item.id} className="flex justify-center pt-5">
+                  {item.topics.map((icon) => {
+                    return (
+                      <ProjectIcons
+                        key={icon}
+                        className="h-20 w-20"
+                        itemTopics={icon}
+                      />
+                    );
+                  })}
+                </div>
+                <div className="flex flex-col items-center">
+                  <h4 className="font-headline text-lg font-semibold ">
+                    {item.name}
+                  </h4>
+                  <p className="w-full mx-auto p-4">{item.description}</p>
+                </div>
+
+                <div className="flex gap-4  py-5 justify-center  ">
+                  {item.topics.map((icon, index) => {
+                    return (
+                      <div key={index} className="flex justify-center">
+                        <StackIcons key={icon} itemTopics={icon} />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex justify-between px-5 mt-auto">
+                  <a
+                    href={item.homepage}
+                    className="shadow shadow-[#bbed2f]  px-2 py-2 rounded-lg text-black "
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaExternalLinkAlt className="h-6 w-6" color="#bbed2f" />
+                  </a>
+
+                  <a
+                    href={item.html_url}
+                    className=" shadow shadow-[#bbed2f]  px-2 py-2 rounded-lg text-black "
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <FaGithub className="h-6 w-6" color="#bbed2f" />
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </Carrosel>
       </div>
     </section>
   );

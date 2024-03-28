@@ -1,4 +1,19 @@
-import { FaCss3Alt, FaHtml5 } from "react-icons/fa";
+import {
+  FaCss3Alt,
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMicrosoftsharepoint,
+  SiPowerautomate,
+  SiPowerapps,
+  SiTypescript,
+} from "react-icons/si";
 
 interface SkillsProps {
   name: string;
@@ -9,91 +24,76 @@ function Skills() {
   const skills: SkillsProps[] = [
     {
       name: "HTML",
-      icon: <FaHtml5 className="h-12 w-12" />,
+      icon: <FaHtml5 className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "CSS",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaCss3Alt className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "JavaScript",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaJs className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "TypeScript",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <SiTypescript className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "React.js",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaReact className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "Node.js",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaNodeJs className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "Git",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaGitAlt className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "GitHub",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <FaGithub className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "TailwindCSS",
-      icon: <FaCss3Alt className="h-12 w-12" />,
-    },
-    {
-      name: "PostgreSQL",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <SiTailwindcss className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "PowerApps",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <SiPowerapps className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "Power Automate",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <SiPowerautomate className="h-12 w-12 text-[#bbed2f]" />,
     },
     {
       name: "SharePoint",
-      icon: <FaCss3Alt className="h-12 w-12" />,
+      icon: <SiMicrosoftsharepoint className="h-12 w-12 text-[#bbed2f]" />,
     },
   ];
 
   return (
     <>
-      <section className=" bg-gray-300  p-5">
-        <div className="container mx-auto max-w-4xl p-4 py-12">
+      <section className="py-10">
+        <div className="container max-w-7xl mx-auto  p-4">
           <div className="relative mb-4 p-4 text-center">
             <h2 className="relative z-50 mb-2 font-bold">
-              <span className="font-handwriting text-4xl text-blue-800">
+              <span className="font-handwriting text-4xl text-[#eaeaea]">
                 Habilidades
               </span>
             </h2>
-            <p className="relative text-sm text-gray-700">
-              Front-end Developer | React.js | JavaScript | TypeScript | Node.js
-              | Power Platform
-            </p>
-            <div className="absolute left-1/2 top-3 z-0 h-10 rounded-lg bg-blue-400/10"></div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto flex justify-center">
-          <div className="grid grid-cols-2 gap-5 font-semibold md:grid-cols-4">
+        <div className="max-w-7xl mx-auto flex justify-center slider-container">
+          <div className=" gap-10  grid grid-cols-2 md:grid-cols-6 font-semibold px-4">
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-row items-center gap-2 md:flex-col md:items-start">
-                <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-white p-2">
-                  <img
-                    // src={skill.icon}
-                    alt={skill.name}
-                    className="h-10 w-10 rounded"
-                  />
-                </div>
-                <div className="w-full flex-grow">
-                  <h4 className="font-headline text-gray-900">{skill.name}</h4>
+                className="flex flex-row gap-2 md:flex-col items-center ">
+                <div>{skill.icon}</div>
+                <div>
+                  <h4 className="font-headline ">{skill.name}</h4>
                 </div>
               </div>
             ))}
