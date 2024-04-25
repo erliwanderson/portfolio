@@ -11,12 +11,12 @@ import useProject from "./useProject";
 
 function Projects() {
   const { settings } = useProject();
-  
+
   const data = useGitHubAutomatedRepos("erliwanderson", "deploy");
 
   return (
-    <section className="pb-8">
-      <div className="container max-w-7xl mx-auto p-4">
+    <section className="">
+      <div className="container max-w-7xl mx-auto ">
         <div className="relative p-4 text-center">
           <h2 className="relative font-headline  z-50 pb-8 font-bold text-4xl">
             Meus{" "}
@@ -29,8 +29,10 @@ function Projects() {
         <Carrosel {...settings}>
           {data.map((item) => {
             return (
-              <div className="p-4 sm:w-80 md:w-96 lg:w-80 xl:w-96   shadow-lg shadow-[#bbed2f]  transition duration-300 ease-in-out hover:-translate-y-1">
-                <div key={item.id} className="flex justify-center pt-5">
+              <div
+                key={item.id}
+                className="p-4 sm:w-80 md:w-96 lg:w-80 xl:w-96 shadow-lg shadow-[#bbed2f]  transition duration-300 ease-in-out hover:-translate-y-1">
+                <div className="flex justify-center pt-5">
                   {item.topics.map((icon) => {
                     return (
                       <ProjectIcons
