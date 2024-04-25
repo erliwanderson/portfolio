@@ -6,10 +6,10 @@ import pdf from "../../assets/pdf/Curriculo-Wanderson.pdf";
 function Hero() {
   return (
     <section className=" pt-10">
-      <div className="container mx-auto max-w-7xl p-2 py-6 flex flex-col md:flex-row">
+      <div className="container mx-auto max-w-7xl p-3 py-6 flex flex-col md:flex-row">
         <div className="basis-1/2">
-          <h1 className="mb-6 text-center md:text-left ">
-            <span className="font-handwriting block text-3xl text-center md:text-left">
+          <h1 className="mb-6  ">
+            <span className="font-handwriting block text-3xl ">
               Olá, me chamo
             </span>
             <span className="font-headline text-5xl font-semibold text-[#eaeaea]">
@@ -19,24 +19,20 @@ function Hero() {
               Erli
             </span>
           </h1>
-          <h2 className="font-semibold flex items-center gap-2 justify-center md:justify-start">
+          <h2 className="font-semibold flex items-center gap-2 ">
             <div className="h-1 w-12 rounded-full  bg-[#bbed2f]  "></div>
-            <p className="text-xl"> Desenvolvedor React.js Front-end</p>
+            <p className="text-xl"> Desenvolvedor Front-end</p>
           </h2>
-          <p className="my-4  text-gray-400 text-lg text-center md:text-left">
-            Sou uma pessoa extremamente comunicativa e analítica, apaixonada por
-            me relacionar com pessoas e absorver novos conhecimentos. Além da
-            faculdade, tenho investido em cursos para complementar meu
-            aprendizado, focando no desenvolvimento Front-end para aprimorar
-            minhas habilidades na área de programação. Decidi me especializar na
-            área de tecnologia porque acredito que ela tem o poder de
-            transformar vidas. Meu comprometimento e sede de aprendizado são,
-            sem dúvida, minhas maiores diferenças. Tenho certeza de que posso
-            ser uma peça útil e contribuir de forma significativa ao longo do
-            tempo.
+          <p className="my-4  text-gray-400 text-lg  md:text-left">
+            Sou comunicativo, analítico e apaixonado por tecnologia. Após o
+            serviço militar, decidi me especializar em desenvolvimento de
+            software. Ao longo dessa jornada, adquiri habilidades em HTML5,
+            CSS3, JavaScript, Git, Sass, Bootstrap, React, Node, TypeScript,
+            React Native e Firebase. Um desenvolvedor audacioso, em busca de uma
+            oportunidade para gerar valor em uma equipe tech.
           </p>
 
-          <div className="flex items-center pb-6 justify-center md:justify-start gap-2">
+          <div className="flex items-center  justify-center md:justify-start gap-2">
             <a
               href="../#contact "
               className="underline font-bold text-[#eaeaea]">
@@ -53,7 +49,7 @@ function Hero() {
           </div>
         </div>
 
-        <div className="basis-1/2 pt-10 ">
+        <div className="basis-1/2 pt-10 pr-2 ">
           <img
             style={{ boxShadow: " 0px 0px 30px #bbed2f" }}
             className="hidden md:block w-80 h-80 rounded-full ml-auto "
