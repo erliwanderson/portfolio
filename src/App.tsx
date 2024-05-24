@@ -5,11 +5,11 @@ import Contact from "./components/contact/Contact";
 
 export default function App() {
   return (
-    <>
+    <main>
       <Hero />
       <Projects />
       <Skills />
       <Contact />
-    </>
+    </main>
   );
 }

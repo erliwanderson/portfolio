@@ -42,6 +42,7 @@ function Hero() {
             <a
               target="_blank"
               href={pdf}
+              download={"Curriculo-Wanderson.pdf"}
               className=" flex items-center gap-2 bg-[#bbed2f]  hover:bg-[#eaeaea] px-3 py-2 rounded-lg text-black ">
               <HiDownload />
               Baixe meu CV
