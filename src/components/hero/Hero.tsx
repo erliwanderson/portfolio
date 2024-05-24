@@ -24,12 +24,8 @@ function Hero() {
             <p className="text-xl"> Desenvolvedor Front-end</p>
           </h2>
           <p className="my-4  text-gray-400 text-lg  md:text-left">
-            Sou comunicativo, analítico e apaixonado por tecnologia. Após o
-            serviço militar, decidi me especializar em desenvolvimento de
-            software. Ao longo dessa jornada, adquiri habilidades em HTML5,
-            CSS3, JavaScript, Git, Sass, Bootstrap, React, Node, TypeScript,
-            React Native e Firebase. Um desenvolvedor audacioso, em busca de uma
-            oportunidade para gerar valor em uma equipe tech.
+            Apaixonado por tecnologia e inovação. Gosto de abraçar novos
+            desafios, trabalhar em equipe e aprender novas habilidades.
           </p>
 
           <div className="flex items-center  justify-center md:justify-start gap-2">
